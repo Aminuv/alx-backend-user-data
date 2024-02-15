@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
- the Auth
+Auth
 """
 from flask import request
 from typing import List, TypeVar
@@ -9,11 +9,11 @@ import re
 
 class Auth:
     """
-     the class to manage the API authentication
+    a class to manage the API authentication
     """
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """
-         the method that returns False
+        a method that returns False
         """
         if path is not None and excluded_paths is not None:
             for exc_path in map(lambda x: x.strip(), excluded_paths):
@@ -30,7 +30,7 @@ class Auth:
 
     def authorization_header(self, request=None) -> str:
         """
-        the  returns the authorization header
+        returns the authorization header
         """
         if request is None:
             return None
@@ -40,6 +40,6 @@ class Auth:
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
-        the  returns current user information
+        returns current user information
         """
         return None
